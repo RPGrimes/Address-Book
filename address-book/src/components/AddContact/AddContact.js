@@ -6,11 +6,9 @@ const AddContact = (props) => {
   //------------------------
   // DECLARE STATE VARIABLES
   //------------------------
-  let name = '';
-  let number = '';
 
-  const [contactName, setContactName] = useState(name);
-  const [contactNumber, setContactNumber] = useState(number);
+  const [contactName, setContactName] = useState();
+  const [contactNumber, setContactNumber] = useState();
 
   const handleContactName = (e) => {
     setContactName(e.target.value);
@@ -23,7 +21,13 @@ const AddContact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   //  validation functions to go in here below to be reviewed upon submit
-    //NEED TO STORE IT SOMEWHERE WHEN SUBMITTED - in an array of key:objects? [{name1: number1}, {name2: number2}] etc.
+
+    //NEED TO STORE IT SOMEWHERE WHEN SUBMITTED - in an array of key:values? [{name1: number1}, {name2: number2}] etc.
+    const oldState = props.addressList
+    const newContact = {Name:contactName, Tel:contactNumber}
+    const newState = [...oldState, newContact] //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact. 
+    
+    props.setAddressList(newState);
   }
 
   //ADD VALIDATION FUNCTIONS HERE
