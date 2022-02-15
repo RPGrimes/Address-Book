@@ -23,7 +23,16 @@ const AddContact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   //  validation functions to go in here below to be reviewed upon submit
-    
+    //NEED TO STORE IT SOMEWHERE WHEN SUBMITTED - in an array of key:objects? [{name1: number1}, {name2: number2}] etc.
+  }
+
+  //ADD VALIDATION FUNCTIONS HERE
+  const checkValidName = (name) => {
+
+  }
+
+  const checkValidNumber = (number) => {
+
   }
 
   return (
