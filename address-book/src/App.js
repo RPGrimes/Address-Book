@@ -19,7 +19,11 @@ function App() {
               <AddContact addressList={addressList} setAddressList={setAddressList} />
             </div>
           } />
-          {/* <Route path="/list" element={} /> */}
+          <Route path="/list" element={
+            <div className="listComponents">
+              <ListContacts addressList={addressList}/>
+            </div>
+          } />
           {/* <Route path="/search" element={} /> */}
         </Routes>
       </BrowserRouter>
