@@ -1,6 +1,7 @@
 import "./app.scss"
 import Intro from "./components/Intro/Intro"
 import AddContact from "./components/AddContact/AddContact"
+import ListContacts from "./components/ListContacts/ListContacts"
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
@@ -21,7 +22,7 @@ function App() {
           } />
           <Route path="/list" element={
             <div className="listComponents">
-              <ListContacts addressList={addressList}/>
+              <ListContacts addressList={addressList} />
             </div>
           } />
           {/* <Route path="/search" element={} /> */}
