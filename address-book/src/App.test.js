@@ -1,10 +1,9 @@
 import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react';
 import App from "./App";
-import {MemoryRouter} from "react-router-dom";
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/Address Book/i);
   expect(linkElement).toBeInTheDocument();
 });
