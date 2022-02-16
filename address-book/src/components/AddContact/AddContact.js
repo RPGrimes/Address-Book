@@ -81,6 +81,15 @@ const AddContact = (props) => {
       >
         Full Address Book
       </button>
+      <button
+          className="btn-start"
+          type="submit"
+          onClick={() => {
+            navigate("/search");
+          }}
+        >
+          Search Contacts
+        </button>
     </div>
   )
 }

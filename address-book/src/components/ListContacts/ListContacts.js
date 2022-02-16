@@ -1,7 +1,6 @@
 import "./listContacts.scss"
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const ListContacts = (props) => {
 
@@ -34,6 +33,15 @@ const ListContacts = (props) => {
           }}
         >
           Add New Contact(s)
+        </button>
+        <button
+          className="btn-start"
+          type="submit"
+          onClick={() => {
+            navigate("/search");
+          }}
+        >
+          Search Contacts
         </button>
       </div>
     </div>

@@ -2,6 +2,7 @@ import "./app.scss"
 import Intro from "./components/Intro/Intro"
 import AddContact from "./components/AddContact/AddContact"
 import ListContacts from "./components/ListContacts/ListContacts"
+import SearchContacts from "./components/SearchContacts/SearchContacts"
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
@@ -25,7 +26,11 @@ function App() {
               <ListContacts addressList={addressList} />
             </div>
           } />
-          {/* <Route path="/search" element={} /> */}
+          <Route path="/search" element={
+            <div>
+              <SearchContacts addressList={addressList} />
+            </div>
+          } />
         </Routes>
       </BrowserRouter>
     </div>
