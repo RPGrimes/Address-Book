@@ -9,7 +9,7 @@ function App() {
 
   const [addressList, setAddressList] = useState([]);
 
-  console.log(addressList)
+  // console.log(addressList)
   return (
     <div className="app">
       <BrowserRouter>

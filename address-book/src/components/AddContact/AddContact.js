@@ -1,12 +1,15 @@
 import "./addContact.scss"
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddContact = (props) => {
+
+  let navigate = useNavigate();
+
   //------------------------
   // DECLARE STATE VARIABLES
   //------------------------
-
   const [contactName, setContactName] = useState();
   const [contactNumber, setContactNumber] = useState();
 
@@ -24,7 +27,7 @@ const AddContact = (props) => {
 
     //NEED TO STORE IT SOMEWHERE WHEN SUBMITTED - in an array of key:values? [{name1: number1}, {name2: number2}] etc.
     const oldState = props.addressList
-    const newContact = {Name:contactName, Tel:contactNumber}
+    const newContact = {name:contactName, number:contactNumber}
     const newState = [...oldState, newContact] //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact. 
     
     props.setAddressList(newState);
@@ -69,6 +72,15 @@ const AddContact = (props) => {
             </form>
         </div>
       </div>
+      <button
+        className="btn-start"
+        type="submit"
+        onClick={() => {
+          navigate("list");
+        }}
+      >
+        Full Address Book
+      </button>
     </div>
   )
 }
