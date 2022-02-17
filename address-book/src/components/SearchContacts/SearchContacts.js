@@ -19,25 +19,29 @@ const SearchContacts = (props) => {
     setSearchNumber(e.target.value);
   };
 
-  const matchingNameResults = [];
-  const matchingNumberResults = [];
+  const matchingResults = [];
+
 
   let i = 0;
 
   const searchNames = contactList.forEach((element) => {
     if (searchName === "") return;
-    if (element.name.includes(searchName)) {
-      matchingNameResults.push(element);
+    if (element.name.toLowerCase().includes(searchName)) {
+      if (!matchingResults.includes(element)) {
+        matchingResults.push(element);
+      }
     }
   });
 
   const searchNumbers = contactList.forEach((element) => {
     if (element.number === searchNumber) {
-      matchingNumberResults.push(element);
+      if (!matchingResults.includes(element)) {
+        matchingResults.push(element);
+      }
     }
   });
 
-  const listNameResults = matchingNameResults.map(({ name, number }) => {
+  const listResults = matchingResults.map(({ name, number }) => {
     return (
       <p key={name}>
         Name: {name} Tel: {number}
@@ -45,13 +49,13 @@ const SearchContacts = (props) => {
     );
   });
 
-  const listNumberResults = matchingNumberResults.map(({ name, number }) => {
-    return (
-      <p key={name}>
-        Name: {name} Tel: {number}
-      </p>
-    );
-  });
+  // const listNumberResults = matchingResults.map(({ name, number }) => {
+  //   return (
+  //     <p key={name}>
+  //       Name: {name} Tel: {number}
+  //     </p>
+  //   );
+  // });
 
   return (
     <div className='SearchContacts'>
@@ -60,6 +64,7 @@ const SearchContacts = (props) => {
         Please enter what you are searching for into the form below and see the
         results update below.
       </p>
+      <h4>You may only search by name OR number, do not search using both</h4>
       <p>To search by name you can enter a partial or exact match</p>
       <p>To search by number it must be an exact match</p>
       <form>
@@ -83,8 +88,8 @@ const SearchContacts = (props) => {
             onChange={handleSearchNumber}></input>
         </label>
       </form>
-      <div>{listNameResults}</div>
-      <div>{listNumberResults}</div>
+      <div>{listResults}</div>
+      {/* <div>{listNumberResults}</div> */}
       <div className='navigationButtons'>
         <button
           className='btn-start'
