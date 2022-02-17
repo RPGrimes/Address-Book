@@ -98,7 +98,7 @@ const AddContact = (props) => {
   };
 
   const checkValidNumber = () => {
-    return /^[0-9\(\)\+]*$/.test(contactNumber);
+    return /^[0-9\(\)\+\,]*$/.test(contactNumber);
   };
 
   //------------------------
@@ -114,7 +114,7 @@ const AddContact = (props) => {
             <label>
               Name:
               <input
-                className="input"
+                className='input'
                 type='text'
                 placeholder='Contact Name'
                 name='contactName'
@@ -125,7 +125,7 @@ const AddContact = (props) => {
             <label>
               Tel:
               <input
-              className="input"
+                className='input'
                 type='text'
                 placeholder='Contact Number'
                 name='contactNumber'
@@ -133,7 +133,9 @@ const AddContact = (props) => {
                 onChange={handleContactNumber}></input>
             </label>{" "}
             <br />
-            <button type='submit' className='btn'>Submit</button>
+            <button type='submit' className='btn'>
+              Submit
+            </button>
           </form>
         </div>
       </div>

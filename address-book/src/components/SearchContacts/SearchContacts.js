@@ -21,7 +21,7 @@ const SearchContacts = (props) => {
 
   const matchingResults = [];
 
-  const searchNames = contactList.forEach((element) => {
+  contactList.forEach((element) => {
     if (searchName === "") return;
     if (element.name.toLowerCase().includes(searchName)) {
       if (!matchingResults.includes(element)) {
@@ -30,7 +30,7 @@ const SearchContacts = (props) => {
     }
   });
 
-  const searchNumbers = contactList.forEach((element) => {
+  contactList.forEach((element) => {
     if (element.number === searchNumber) {
       if (!matchingResults.includes(element)) {
         matchingResults.push(element);
@@ -60,7 +60,7 @@ const SearchContacts = (props) => {
         <label>
           Name:
           <input
-            className="input"
+            className='input'
             type='text'
             placeholder='Contact Name'
             name='searchName'
@@ -71,7 +71,7 @@ const SearchContacts = (props) => {
         <label>
           Tel:
           <input
-            className="input"
+            className='input'
             type='text'
             placeholder='Contact Number'
             name='searchNumber'
