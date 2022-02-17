@@ -37,7 +37,7 @@ const AddContact = (props) => {
 
     if (checkValidNumberStart() === false) {
       return alert(
-        'Invalid number entered. Number must start with either "+" or "0". If it starts with a + the second digit may NOT be "0 Please try again!'
+        'Invalid number entered. Number must start with either "+" or "0". If it starts with a + the second digit may NOT be "0" Please try again!'
       );
     }
 
@@ -52,6 +52,9 @@ const AddContact = (props) => {
     const newState = [...oldState, newContact]; //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact.
 
     props.setAddressList(newState);
+    setContactName("");
+    setContactNumber("");
+    return alert("Contact successfully added!");
   };
 
   //------------------------
@@ -111,6 +114,7 @@ const AddContact = (props) => {
             <label>
               Name:
               <input
+                className="input"
                 type='text'
                 placeholder='Contact Name'
                 name='contactName'
@@ -121,6 +125,7 @@ const AddContact = (props) => {
             <label>
               Tel:
               <input
+              className="input"
                 type='text'
                 placeholder='Contact Number'
                 name='contactNumber'
@@ -128,12 +133,12 @@ const AddContact = (props) => {
                 onChange={handleContactNumber}></input>
             </label>{" "}
             <br />
-            <button type='submit'>Submit</button>
+            <button type='submit' className='btn'>Submit</button>
           </form>
         </div>
       </div>
       <button
-        className='btn-start'
+        className='btn'
         type='submit'
         onClick={() => {
           navigate("list");
@@ -141,7 +146,7 @@ const AddContact = (props) => {
         Full Address Book
       </button>
       <button
-        className='btn-start'
+        className='btn'
         type='submit'
         onClick={() => {
           navigate("/search");

@@ -47,7 +47,7 @@ const SearchContacts = (props) => {
   });
 
   return (
-    <div className='SearchContacts'>
+    <div className='searchContacts'>
       <h1>Address Book</h1>
       <p>
         Please enter what you are searching for into the form below and see the
@@ -60,6 +60,7 @@ const SearchContacts = (props) => {
         <label>
           Name:
           <input
+            className="input"
             type='text'
             placeholder='Contact Name'
             name='searchName'
@@ -70,6 +71,7 @@ const SearchContacts = (props) => {
         <label>
           Tel:
           <input
+            className="input"
             type='text'
             placeholder='Contact Number'
             name='searchNumber'
@@ -81,7 +83,7 @@ const SearchContacts = (props) => {
       {/* <div>{listNumberResults}</div> */}
       <div className='navigationButtons'>
         <button
-          className='btn-start'
+          className='btn'
           type='submit'
           onClick={() => {
             navigate("/");
@@ -89,7 +91,7 @@ const SearchContacts = (props) => {
           Add New Contact(s)
         </button>
         <button
-          className='btn-start'
+          className='btn'
           type='submit'
           onClick={() => {
             navigate("/list");

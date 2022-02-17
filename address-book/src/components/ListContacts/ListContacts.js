@@ -34,7 +34,7 @@ const ListContacts = (props) => {
 
       <div className='navigationButtons'>
         <button
-          className='btn-start'
+          className='btn'
           type='submit'
           onClick={() => {
             navigate("/");
@@ -42,7 +42,7 @@ const ListContacts = (props) => {
           Add New Contact(s)
         </button>
         <button
-          className='btn-start'
+          className='btn'
           type='submit'
           onClick={() => {
             navigate("/search");
