@@ -23,6 +23,10 @@ const AddContact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if(checkValidName() === false){
+      return alert("Invalid name entered. Names must be comprised of letters or spaces ONLY. Please try again!")
+    }
   //  validation functions to go in here below to be reviewed upon submit
 
     const oldState = props.addressList
@@ -34,7 +38,10 @@ const AddContact = (props) => {
 
   //ADD VALIDATION FUNCTIONS HERE
   const checkValidName = () => {
+    return /^[a-zA-Z\s]*$/.test(contactName)
   }
+
+  console.log(checkValidName())
 
   const checkValidNumber = (contactNumber) => {
 
