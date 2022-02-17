@@ -21,9 +21,6 @@ const SearchContacts = (props) => {
 
   const matchingResults = [];
 
-
-  let i = 0;
-
   const searchNames = contactList.forEach((element) => {
     if (searchName === "") return;
     if (element.name.toLowerCase().includes(searchName)) {
@@ -48,14 +45,6 @@ const SearchContacts = (props) => {
       </p>
     );
   });
-
-  // const listNumberResults = matchingResults.map(({ name, number }) => {
-  //   return (
-  //     <p key={name}>
-  //       Name: {name} Tel: {number}
-  //     </p>
-  //   );
-  // });
 
   return (
     <div className='SearchContacts'>
