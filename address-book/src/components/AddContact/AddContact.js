@@ -25,7 +25,6 @@ const AddContact = (props) => {
     e.preventDefault();
   //  validation functions to go in here below to be reviewed upon submit
 
-    //NEED TO STORE IT SOMEWHERE WHEN SUBMITTED - in an array of key:values? [{name1: number1}, {name2: number2}] etc.
     const oldState = props.addressList
     const newContact = {name:contactName, number:contactNumber}
     const newState = [...oldState, newContact] //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact. 
