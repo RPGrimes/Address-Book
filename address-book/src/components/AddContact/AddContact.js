@@ -34,11 +34,10 @@ const AddContact = (props) => {
   }
 
   //ADD VALIDATION FUNCTIONS HERE
-  const checkValidName = (name) => {
-
+  const checkValidName = () => {
   }
 
-  const checkValidNumber = (number) => {
+  const checkValidNumber = (contactNumber) => {
 
   }
 
@@ -62,7 +61,7 @@ const AddContact = (props) => {
               Tel:
               <input
                 type="text"
-                placeholder="01234567890"
+                placeholder="Contact Number"
                 name="contactNumber"
                 value={contactNumber}
                 onChange={handleContactNumber}

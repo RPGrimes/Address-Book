@@ -13,15 +13,17 @@ const ListContacts = (props) => {
     if (a.name > b.name) {return 1; }
     return 0;
   })
-  // console.log(props.addressList) //This successfully logs to console, showing that the props have been passed from parent(App.js) to child (this component)
-  console.log(contactList)
 
   const listContacts = contactList.map(( {name, number} ) => {
-    return <p key={name}>{name}: {number}</p>
+    return <p key={name}>Name: {name} Tel: {number}</p>
   })
 
   return (
     <div className="listContacts">
+
+      <h1>Address Book</h1>
+      <p>Please see a list of all contacts below</p> 
+
       {listContacts}
 
       <div className="navigationButtons">
