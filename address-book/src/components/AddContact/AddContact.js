@@ -47,6 +47,14 @@ const AddContact = (props) => {
       );
     }
 
+    if (checkBracketOrder() === false) {
+      return alert(
+        "Brackets must be in the correct order to be valid!"
+      );
+    }
+
+    checkBracketOrder()
+
     const oldState = props.addressList;
     const newContact = { name: contactName, number: contactNumber };
     const newState = [...oldState, newContact]; //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact.
@@ -96,6 +104,26 @@ const AddContact = (props) => {
       return openParCount > 1 ? false : null;
     }
   };
+
+  const checkBracketOrder = (number) => {
+    let string = "()";
+    const stringArr = string.split("");
+    const contactNumberArray = contactNumber.split("");
+
+    let openParArray = [];
+    let closeParArray = [];
+
+    contactNumberArray.forEach((element) =>
+      element === stringArr[0] ? openParArray.push(contactNumberArray.indexOf(element)) : null
+    );
+
+    contactNumberArray.forEach((element) =>
+    element === stringArr[1] ? closeParArray.push(contactNumberArray.indexOf(element)) : null
+  );
+
+    if(openParArray[0] > closeParArray[0])
+      return false;
+    }
 
   const checkValidNumber = () => {
     return /^[0-9\(\)\+\,]*$/.test(contactNumber);
