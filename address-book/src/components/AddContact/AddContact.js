@@ -53,8 +53,6 @@ const AddContact = (props) => {
       );
     }
 
-    checkBracketOrder()
-
     const oldState = props.addressList;
     const newContact = { name: contactName, number: contactNumber };
     const newState = [...oldState, newContact]; //Old state is a list of objects in an array, in order to make a new array of all the old objects plus the new contact.
