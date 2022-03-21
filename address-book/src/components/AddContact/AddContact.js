@@ -105,7 +105,7 @@ const AddContact = (props) => {
     }
   };
 
-  const checkBracketOrder = (number) => {
+  const checkBracketOrder = () => {
     let string = "()";
     const stringArr = string.split("");
     const contactNumberArray = contactNumber.split("");
